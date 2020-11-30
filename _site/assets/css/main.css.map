@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"main.scss",
+		"_sass/main.scss"
+	],
+	"sourcesContent": [
+		"@import \"main\";\n",
+		"$backgroundColor: #ffffff;\n$bodyColor: #000000;\n$bodyFont: 'Kumbh Sans', sans-serif;\n@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');\n\nbody {\n  background: $backgroundColor;\n  color: $bodyColor;\n  font-family: $bodyFont;\n}\n\n.content {\n  h1, h2, h3, h4, h5, h6 {\n    font-weight: bold;\n  }\n  h2 {\n    margin-top: 2rem;\n    margin-bottom: 1.5rem;\n  }\n  h3 { font-size: 1.7rem; }\n}\n"
+	],
+	"names": [],
+	"mappings": "ACGA,OAAO,CAAC,wFAAI;AAEZ,AAAA,IAAI,CAAC,EACH,UAAU,EANM,OAAO,EAOvB,KAAK,EANK,OAAO,EAOjB,WAAW,EANF,YAAY,EAAE,UAAU,GAOlC;;AAED,AACE,QADM,CACN,EAAE,EADJ,QAAQ,CACF,EAAE,EADR,QAAQ,CACE,EAAE,EADZ,QAAQ,CACM,EAAE,EADhB,QAAQ,CACU,EAAE,EADpB,QAAQ,CACc,EAAE,CAAC,EACrB,WAAW,EAAE,IAAI,GAClB;;AAHH,AAIE,QAJM,CAIN,EAAE,CAAC,EACD,UAAU,EAAE,IAAI,EAChB,aAAa,EAAE,MAAM,GACtB;;AAPH,AAQE,QARM,CAQN,EAAE,CAAC,EAAE,SAAS,EAAE,MAAM,GAAI"
+}
