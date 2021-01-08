@@ -16,28 +16,36 @@
         <div class="col">
           <h1 class="mb-5 mt-4">Game Elements and Mechanics</h1>
           <h2 id="dual-aiming">Dual Aiming</h2>
-<ul>
-  <li>Each stick will correspond with 1 Gun
-    <ul>
-      <li>Left - Blue</li>
-      <li>Right - Red</li>
-    </ul>
-  </li>
-  <li>The direction the stick is on the controller will be the direction they aim with that gun
-    <ul>
-      <li>The guns can only aim in 8 directions around the character (Up, Up-Left,Left, Down-Left,Down, Down-Right, Right, Up-Right)</li>
-    </ul>
-  </li>
-  <li>Each stick is independent of each other and can overlap (aim exactly in the same direction.</li>
-  <li>A line will indicate which lane each gun is aiming down.</li>
-  <li>If using a controller, the player will be able to set the dead zones and the angles for the straight and diagonal lanes. In general, the angles for the diagonal lanes should be wider than the straight lanes
-  <em>Insert Controller Circle Diagram</em></li>
-</ul>
+
+<p>The character is controlled with both sticks of a controller (Keyboard controls still are still being revised). Each stick corresponds with a gun: Left = Blue, Right = Red. The character can aim each gun in 1 of 8 directions (0, 45, 90, 135, 180, 225, 270, 315 degrees) and can overlap on the same angle. The character will continue to aim down their last angle if they reset the control stick to a neutral position.</p>
+
+<div class="row mb-4">
+  <div class="col-md-4"><img src="https://via.placeholder.com/400x300" class="img-fluid" /></div>
+  <div class="col-md-4"><img src="https://via.placeholder.com/400x300" class="img-fluid" /></div>
+  <div class="col-md-4"><img src="https://via.placeholder.com/400x300" class="img-fluid" /></div>
+</div>
+
+<!--
+- Each stick will correspond with 1 Gun
+  - Left - Blue
+  - Right - Red
+- The direction the stick is on the controller will be the direction they aim with that gun
+  - The guns can only aim in 8 directions around the character (Up, Up-Left,Left, Down-Left,Down, Down-Right, Right, Up-Right)
+- Each stick is independent of each other and can overlap (aim exactly in the same direction.
+- A line will indicate which lane each gun is aiming down.
+- If using a controller, the player will be able to set the dead zones and the angles for the straight and diagonal lanes. In general, the angles for the diagonal lanes should be wider than the straight lanes\
+	_Insert Controller Circle Diagram_ -->
 
 <h2 id="shooting">Shooting</h2>
+<p>When the character shoots, a single bullet travels down the lane. If the bullet hits an enemy:</p>
+
 <ul>
-  <li>Each bumper/trigger on the controller will shoot the corresponding gun (left bumper/trigger for the left gun and vice versa).</li>
+  <li>If the enemy can be hit by that bullet: Enemy dies and bullet disappears.</li>
+  <li>If the enemy cannot be hit by that bullet: The enemy continues to rush towards the player, the bullet disappears.</li>
   <li>
+    <p>If the bullet reaches the end of the screen,</p>
+  </li>
+  <li>Each bumper/trigger on the controller will shoot the corresponding gun (left bumper/trigger for the left gun and vice versa).
     <ul>
       <li>The guns will only shoot 1 bullet at a time</li>
     </ul>

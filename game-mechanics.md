@@ -4,6 +4,16 @@ title: "Game Elements and Mechanics"
 ---
 
 ## Dual Aiming
+
+The character is controlled with both sticks of a controller (Keyboard controls still are still being revised). Each stick corresponds with a gun: Left = Blue, Right = Red. The character can aim each gun in 1 of 8 directions (0, 45, 90, 135, 180, 225, 270, 315 degrees) and can overlap on the same angle. The character will continue to aim down their last angle if they reset the control stick to a neutral position.
+
+<div class="row mb-4">
+  <div class="col-md-4"><img src="https://via.placeholder.com/400x300" class="img-fluid"></div>
+  <div class="col-md-4"><img src="https://via.placeholder.com/400x300" class="img-fluid"></div>
+  <div class="col-md-4"><img src="https://via.placeholder.com/400x300" class="img-fluid"></div>
+</div>
+
+<!--
 - Each stick will correspond with 1 Gun
   - Left - Blue
   - Right - Red
@@ -11,12 +21,18 @@ title: "Game Elements and Mechanics"
   - The guns can only aim in 8 directions around the character (Up, Up-Left,Left, Down-Left,Down, Down-Right, Right, Up-Right)
 - Each stick is independent of each other and can overlap (aim exactly in the same direction.
 - A line will indicate which lane each gun is aiming down.
-- If using a controller, the player will be able to set the dead zones and the angles for the straight and diagonal lanes. In general, the angles for the diagonal lanes should be wider than the straight lanes
-	_Insert Controller Circle Diagram_
+- If using a controller, the player will be able to set the dead zones and the angles for the straight and diagonal lanes. In general, the angles for the diagonal lanes should be wider than the straight lanes\
+	_Insert Controller Circle Diagram_ -->
 
 ## Shooting
+When the character shoots, a single bullet travels down the lane. If the bullet hits an enemy:
+
+- If the enemy can be hit by that bullet: Enemy dies and bullet disappears.
+- If the enemy cannot be hit by that bullet: The enemy continues to rush towards the player, the bullet disappears.
+- If the bullet reaches the end of the screen,
+
 - Each bumper/trigger on the controller will shoot the corresponding gun (left bumper/trigger for the left gun and vice versa).
-- - The guns will only shoot 1 bullet at a time
+  - The guns will only shoot 1 bullet at a time
 - The bumpers cannot be held to constantly shoot bullets
 - Bullets
   - travel in straight lines and at a constant speed (speed may be modified based on the in-game effects E.g. Slow motion)
