@@ -29,47 +29,45 @@ When the character shoots, a single bullet travels down the lane. If the bullet 
 
 - If the enemy can be hit by that bullet: Enemy dies and bullet disappears.
 - If the enemy cannot be hit by that bullet: The enemy continues to rush towards the player, the bullet disappears.
-- If the bullet reaches the end of the screen,
+- If the bullet reaches the end of the screen: The bullet disappears and the player is stunned.
 
-- Each bumper/trigger on the controller will shoot the corresponding gun (left bumper/trigger for the left gun and vice versa).
+The guns that the player holds are single shot firearms. Multiple bullets can be fired at a time as long as the player is not **stunned**.
+
+<!-- - Each bumper/trigger on the controller will shoot the corresponding gun (left bumper/trigger for the left gun and vice versa).
   - The guns will only shoot 1 bullet at a time
 - The bumpers cannot be held to constantly shoot bullets
 - Bullets
   - travel in straight lines and at a constant speed (speed may be modified based on the in-game effects E.g. Slow motion)
   - When hitting an enemy will destroy the bullet (does not travel through enemies)
-- Successfully killing an enemy will enable Hit Stop
+- Successfully killing an enemy will enable Hit Stop -->
 
 ### Hit Stop
-- After successfully killing an enemy, all spawned enemies will stop for a short amount of time.
+- After successfully killing an enemy, all enemies that have spawned will stop for a short amount of time. The enemies will gradually return to the current game speed.
 
 ### Missing a shot
-- Missing a shot happens when
+Missing a shot will end the player's combo. Missing a shot happens when:
+
   - A player hits the wrong enemy with the wrong gun
   - Bullet reaching the border before hitting an enemy
 
+When the player misses, the character is momentarily stunned being unable to shoot or aim.
+
 ## Scoring
-- There are 2 scores:
-  - Points
-  - Player Kills
-- Points are given when a player kills an enemy
-- Points are multiplied by the player’s combo
-  - For every 10 units, the multiplier will increase by 1
-  - Player kills record how many enemies the player has killed before dying
-- Player kills are not affected by combo
+
+There is a score for each game that is based around the performance of the player during that game. The player is awarded points for each kill he gets during the game and those points are multiplied by the combo the player has.
 
 ## Lives
-- The character has 10 lives
-- When the character’s lives reach 0, the game is over
-- The character loses a life when they let an enemy get too close to them
-- The player can gain a life if they shoot a White enemy
+The player has begins the game with X amount of lives each game. The player loses life when an **Enemy Instance** reaches the player. The player can gain lives if they shoot a White Enemy. The player cannot exceed the amount of life that they started with at the beginning of the game. If the player has 0 life, the game ends.
 
 ## Combos
-- Combos begin as soon as the player kills X enemies
+A player begins a combo by killing enemies consistently without missing a hit or getting hit by an enemy.  The combo is also a multiplier that grows with every kill starting at 1 and increasing by 0.1 per kill. Combos begin after the player's 10th consecutive kill.
+
+<!-- - Combos begin as soon as the player kills X enemies
 - Combos will continue to add on for every enemy they kill
 - Combos are a multiplier for your score
 - Multiplier begins at 1.0
 - Every unit will increase the multiplier by 0.1
-- Combos will reset back to 0 when the player is hit or the player misses a shot
+- Combos will reset back to 0 when the player is hit or the player misses a shot -->
 
 ### Combo Ability (Kata Mode)
 The Combo Ability, Kata Mode, is an ability that puts the player in an autopilot state. The character will begin killing the closest enemies when the combo ability is activated. To activate the combo, the player can activate it at any time with an assigned button. Losing the combo to a hit or miss will not activate Kata Mode. The length of the ability will build up as the player gains a larger combo. Kata Mode increases by X amount every Y kills in the combo.
@@ -79,11 +77,10 @@ _E.g. The length of Auto will increase by 0.2s every 20 kills. Kata Mode will la
 The speed that the character kills enemies needs to be set and the value needs to be affected by the overall game speed. The length of Kata Mode will also be affected by the game speed as the faster the game, shorter Kata Mode will be active.
 
 ## Game Speed
-Game Speed is the speed at which enemies spawn and move and the player’s bullets move
-The Game Speed will be modified depending on the current special effect happening during combat
-For Survival, Timed, Endless, the Game Speed will start at 100% and gradually increase the more kills the player gets.
-The global game speed will increase by 1% every X units killed
-For Story Mode, the levels will begin at a set Game Speed and increase from that point
+Game Speed is a factor that speeds up all elements of the game. The game begins at the set Game Speed assigned and gradually increases as the game goes on. The Game Speed caps at it's _starting value plus 300%_. E.g. A level that begins with a Game Speed of x2 and caps at x5. A level that begins with a Game Speed of x1.5 caps at x4.5.
+
+### Player Game Speed
+The **Player Game Speed** is a separate factor that can be changed at any time: Browsing through the menu or In-Game. This value is multiplicative to the **Game Speed** and ranges between x1 - x3. Starting the Player Game Speed at x1 is equal to _1 x Game Speed_, Starting at x2.2 is equal to _2.2 x Game Speed_.
 
 ## Enemies
 
@@ -130,5 +127,3 @@ These are abilities that the player can use once obtained. The abilities will be
 
 ## Game Special Effects
 On occasion, certain special effects will occur to switch up the pace and give the player some breathing room.
-
-## Game Stats
