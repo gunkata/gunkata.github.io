@@ -102,28 +102,26 @@
 
 <h2 id="enemies">Enemies</h2>
 
-<ul>
-  <li>Enemies run straight towards the player character
-    <ul>
-      <li>Enemy’s run speed is affected by the Game Speed</li>
-    </ul>
-  </li>
-  <li>Enemies deal 1 life of damage when reaching the player character in the center of the screen.
-    <ul>
-      <li>When they collide with the character, the enemy disappears</li>
-      <li>When the enemy collides with the player, ALL OTHER enemies are pushed back. The Game Speed will begin at 0% and then gradually increase back to the current game speed before the player got hit.</li>
-      <li>If there are multiple enemies in the same spawn instance they will reach the player at the same time. In this case, the damage dealt will be equal to:</li>
-    </ul>
-  </li>
-</ul>
+<p>Enemies spawn around the player in one of eight directions and run straight towards the player. Enemies run at a constant pace who’s movement speed is affected by the Game Speed.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>number of enemies / 2 rounded up
-1 enemy = 1
-2 enemies = 1
-3 enemies = 2
-4 enemies = 2
-8 enemies = 4
+<p>Enemies that spawn at the same time are part of the same Spawn Instance. Spawn Instances should not be able to overtake each other. The order of the Spawn Instances need to kept the same as when they were spawned.</p>
+
+<p>An enemy that reaches the player deals damage based on the number of enemies in the Spawn Instance. The damage dealt is equal to:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Damage = number of enemies / 2 rounded up
+
+1 - 2 enemies = 1 Damage
+3 - 4 enemies = 2 Damage
+5 - 6 enemies = 3 Damage
+7 - 8 enemies = 4 Damage
 </code></pre></div></div>
+<!-- - Enemies run straight towards the player character
+  - Enemy’s run speed is affected by the Game Speed
+- Enemies deal 1 life of damage when reaching the player character in the center of the screen.
+  - When they collide with the character, the enemy disappears
+  - When the enemy collides with the player, ALL OTHER enemies are pushed back. The Game Speed will begin at 0% and then gradually increase back to the current game speed before the player got hit.
+  - If there are multiple enemies in the same spawn instance they will reach the player at the same time. In this case, the damage dealt will be equal to: -->
+
+<p>The enemies are killed when shot with the correct gun. There are multiple types of enemies which will be listed below:</p>
 
 <h3 id="types-of-enemies">Types of Enemies</h3>
 <ul>

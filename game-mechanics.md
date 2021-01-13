@@ -84,21 +84,27 @@ The **Player Game Speed** is a separate factor that can be changed at any time: 
 
 ## Enemies
 
-- Enemies run straight towards the player character
+Enemies spawn around the player in one of eight directions and run straight towards the player. Enemies run at a constant pace who's movement speed is affected by the Game Speed.
+
+Enemies that spawn at the same time are part of the same Spawn Instance. Spawn Instances should not be able to overtake each other. The order of the Spawn Instances need to kept the same as when they were spawned.
+
+An enemy that reaches the player deals damage based on the number of enemies in the Spawn Instance. The damage dealt is equal to:
+```
+Damage = number of enemies / 2 rounded up
+
+1 - 2 enemies = 1 Damage
+3 - 4 enemies = 2 Damage
+5 - 6 enemies = 3 Damage
+7 - 8 enemies = 4 Damage
+```
+<!-- - Enemies run straight towards the player character
   - Enemy’s run speed is affected by the Game Speed
 - Enemies deal 1 life of damage when reaching the player character in the center of the screen.
   - When they collide with the character, the enemy disappears
   - When the enemy collides with the player, ALL OTHER enemies are pushed back. The Game Speed will begin at 0% and then gradually increase back to the current game speed before the player got hit.
-  - If there are multiple enemies in the same spawn instance they will reach the player at the same time. In this case, the damage dealt will be equal to:
+  - If there are multiple enemies in the same spawn instance they will reach the player at the same time. In this case, the damage dealt will be equal to: -->
 
-```
-number of enemies / 2 rounded up
-1 enemy = 1
-2 enemies = 1
-3 enemies = 2
-4 enemies = 2
-8 enemies = 4
-```
+The enemies are killed when shot with the correct gun. There are multiple types of enemies which will be listed below:
 
 ### Types of Enemies
 - Grey - Can be shot by any gun (red or blue)
