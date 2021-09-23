@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Features | Gun Kata</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  <body>
+    <div class="container content">
+      <div class="row">
+        <div class="col">
+          <h1 class="mb-5 mt-4">Features</h1>
+          
+<h2 id="general-mechanics">General Mechanics</h2>
+
+<h3 id="global-game-speed">Global Game Speed</h3>
+
+<p>The Global Game Speed is an overall modifier to all things that move. As the game progresses, the Global Game Speed increases making it more difficult for the player. There will be effects in the game that decrease the Global Game Speed, however, these effects will only be temporary and the game will resume at the speed that it was previously before the effect.</p>
+
+<h3 id="hit-stop">Hit-Stop</h3>
+
+<p>When a bullet kills an enemy, all enemies will stop moving for a brief moment. Hit Stop will help the player set the pace for the multitude of enemies that approach the player at once. The small amounts of time that each kill gives will add to the player’s advantage. If the player is fast enough, the Hit Stop may overlap, resulting in a longer period in Hit Stop.</p>
+
+<h3 id="bullet-time">Bullet Time</h3>
+
+<p>Bullet Time is similar to <em>Hit Stop</em> but occurs randomly and slows down the enemies rather than fully stop their movement. This will be another tool that is activated by killing an enemy. The speed will be fixed meaning that regardless of the <em>Global Game Speed</em> the Bullet Time will set the Global Game Speed to a set value rather than reduce it by a set amount. Bullet Time lasts longer than Hit Stop but should not overlap in time, meaning you cannot activate another Bullet Time whilst it’s already active.</p>
+
+<hr />
+
+<h2 id="player-mechanics">Player Mechanics</h2>
+
+<h3 id="twin-stick-aimingshooting">Twin Stick Aiming/Shooting</h3>
+
+<p>The player has control of two guns wielded in both hands of the character. Each gun is controlled with a single joystick (<em>Keyboard controls TBD</em>) and used to aim down each lane. Although the joystick has full 360 degree range, the guns will snap to the closest lane to where the joystick is pointed. The guns can be shot separately from each other using the respective triggers on the controller (<em>RT/LT, R2/L2, ZR,ZL</em>).</p>
+
+<h3 id="redblue-guns">Red/Blue Guns</h3>
+
+<p>The player wields two guns, the red gun in their right and blue gun in their left. When the player shoots either gun, a bullet of the same colour will spawn from that gun. Depending on the enemy, the bullets shot will have a different effect.</p>
+
+<h4 id="purple-bullets">Purple Bullets</h4>
+
+<p>Aiming both guns down the same lane will result in shooting <em>Purple</em> bullets from both guns. These purple bullets will be able to kill <em>Purple enemies</em>, however, a purple bullet still behaves the same as a regular bullet when shooting blue or red enemies - the red gun for red enemies and blue for blue enemies.</p>
+
+<h3 id="camera-rotating">Camera Rotating</h3>
+
+<p>The player has the ability to rotate the camera. The camera rotates around the character in 45 degree increments and can be rotated in both directions. Although the camera has rotated, the angles the player aims will remain the same rather than keep its original direction. E.g.</p>
+
+<hr />
+
+<h2 id="armoury">Armoury</h2>
+
+<ul>
+  <li>Pistol</li>
+  <li>SMG</li>
+  <li>Assault Rifle</li>
+  <li>Shotgun</li>
+  <li>Heavy Machine Shotgun</li>
+  <li>Sniper Rifle</li>
+</ul>
+
+<hr />
+
+<h2 id="skills">Skills</h2>
+
+<ul>
+  <li>Screen Wipe</li>
+  <li>
+    <Colour> Change
+</Colour>
+  </li>
+  <li>Armour Piercing bullet</li>
+  <li>Adrenaline Rush</li>
+</ul>
+
+<hr />
+
+<h2 id="enemies">Enemies</h2>
+
+<p>Enemies will be the main threat to the player as they approach from all directions. There are different enemy types that will require different ways to kill them.</p>
+
+<h3 id="enemy-types">Enemy Types</h3>
+
+<ul>
+  <li>Grey</li>
+  <li>Red/Blue</li>
+  <li>Purple</li>
+  <li>Yellow/Green</li>
+</ul>
+
+<h4 id="grey">Grey</h4>
+
+<p>The grey is the most common enemy the player will encounter. Grey enemies can be killed with any bullet</p>
+
+<h3 id="spawning">Spawning</h3>
+
+<p>An enemy spawns in one of 8 lanes around the player. Multiple enemies can spawn at once, called a <em>Spawn Instance</em>, and enemies in the spawn instance can be of any type. The time between spawn instances will be random and the lanes the enemies spawn in will also be random. The spawn time also increases and decreases depending on the <em>Global Game Speed Modifier</em>. E.g. If the game slows down due to a skill effect or other effect, the time between spawn instances will be longer and vice versa.</p>
+
+<h3 id="spawn-instance">Spawn Instance</h3>
+
+<p>A <em>Spawn Instance</em> are a group of enemies that spawn at the same time. These enemies are grouped via the time they spawned and not the lane they spawned in. Each enemy within the Spawn Instance will be in a different lane. Enemies within the same lane <strong>cannot</strong> be in the same spawn instance.</p>
+
+<hr />
+
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  </body>
+</html>

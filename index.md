@@ -1,5 +1,4 @@
 ---
-layout: default
+layout: homepage
 title: "Gun Kata"
 ---
-# Welcome to Gun Kata
