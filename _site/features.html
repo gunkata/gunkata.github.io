@@ -16,7 +16,17 @@
         <div class="col">
           <h1 class="mb-5 mt-4">Features</h1>
           
-<h2 id="general-mechanics">General Mechanics</h2>
+<h2 id="gameplay-mechanics">Gameplay Mechanics</h2>
+
+<p>Gun Kata is a survival game. It is played until the player runs out of lives. Their goal is to either: Kill the most enemies or have the highest score.</p>
+
+<h3 id="scoring">Scoring</h3>
+
+<p>There are two scores for the player to keep track of: The number of enemies they’ve killed and an overall point score. The points are gained by killing enemies but will vary based on the combos.</p>
+
+<h4 id="combos">Combos</h4>
+
+<p>A combo begins after the player gets 10 consecutive kills in a row. This means that the correct bullet has been used to kill the enemy. An incorrect bullet used to hit an enemy results in a failed combo and will therefore reset the combo counter. The combo is a direct multiplier when calculating your score,  starting at x1 when the combo begins (begins after 5 kills) and adding up per kill. E.g. A grey enemy is worth 1 point and with a combo of 20, the kill will yield 20 points for single grey enemy. Combos will also reset if the player shoots down a lane with no enemies.</p>
 
 <h3 id="global-game-speed">Global Game Speed</h3>
 
@@ -30,9 +40,19 @@
 
 <p>Bullet Time is similar to <em>Hit Stop</em> but occurs randomly and slows down the enemies rather than fully stop their movement. This will be another tool that is activated by killing an enemy. The speed will be fixed meaning that regardless of the <em>Global Game Speed</em> the Bullet Time will set the Global Game Speed to a set value rather than reduce it by a set amount. Bullet Time lasts longer than Hit Stop but should not overlap in time, meaning you cannot activate another Bullet Time whilst it’s already active.</p>
 
+<h3 id="camera">Camera</h3>
+
+<p>The camera is at a fixed position placing the character in the center of the screen. The camera will zoom out under certain effects such as when a player wields a <em>Sniper Rifle</em>, but will return to its previous position afterwards.</p>
+
+<h3 id="knockback">Knockback</h3>
+
+<p>When a player is hit, all enemies are pushed away from the player. This is to give the player time to re-adjust if the number of enemies approaching becomes overwhelming. The enemies are pushed back a certain distance, keeping the order that they’ve spawned. There will be a brief moment that the enemies have fully stopped before the enemies begin move again. They will gradually increase speed until they have returned to their original speed. This gradual increase is exponential rather than linear.</p>
+
 <hr />
 
 <h2 id="player-mechanics">Player Mechanics</h2>
+
+<p>The player controls a stationary character situated in the center of the screen. The character wields two guns which they point down the 8 lanes that surround them. The player has to defend themselves from oncoming enemies that travel down the 8 lanes.</p>
 
 <h3 id="twin-stick-aimingshooting">Twin Stick Aiming/Shooting</h3>
 
@@ -40,7 +60,7 @@
 
 <h3 id="redblue-guns">Red/Blue Guns</h3>
 
-<p>The player wields two guns, the red gun in their right and blue gun in their left. When the player shoots either gun, a bullet of the same colour will spawn from that gun. Depending on the enemy, the bullets shot will have a different effect.</p>
+<p>The player wields two guns, the red gun in their right and blue gun in their left. When the player shoots either gun, a bullet of the same colour will spawn from that gun. Depending on the enemy, the bullets shot will have a different effect. These guns have unlimited ammo. Other guns that are acquired by killing an enemy equipped with a gun will have limited ammo. <em>See armoury for more information</em>.</p>
 
 <h4 id="purple-bullets">Purple Bullets</h4>
 
@@ -48,19 +68,64 @@
 
 <h3 id="camera-rotating">Camera Rotating</h3>
 
-<p>The player has the ability to rotate the camera. The camera rotates around the character in 45 degree increments and can be rotated in both directions. Although the camera has rotated, the angles the player aims will remain the same rather than keep its original direction. E.g.</p>
+<p>The player has the ability to rotate the camera. The camera rotates around the character in 45 degree increments and can be rotated in both directions. Although the camera has rotated, the angles the player aims will remain the same rather than keep its original direction. E.g. tilting the joystick up will always aim the gun in the above north of the character.</p>
+
+<h3 id="life">Life</h3>
+
+<p>The player has 10 lives that they lose when an enemy reaches them. Depending on the <em>Spawn Instance</em>, the number of lives lost when the <em>Spawn Instance</em> reaches the character changes.</p>
+
+<p>Lives lost if the <em>Spawn Instance</em> has:</p>
+<ul>
+  <li>1-2 enemies = 1 Life</li>
+  <li>3-4 enemies = 2 Lives</li>
+  <li>5-6 enemies = 3 Lives</li>
+  <li>7-8 enemies = 4 lives</li>
+</ul>
 
 <hr />
 
 <h2 id="armoury">Armoury</h2>
 
+<p>Weapons will spawn on enemies which will display an icon above their head. Once an enemy is killed the player will  wield the gun(s) until all ammo is used from that gun. If the player happens to kill multiple enemies whilst wielding another weapon other than his pistols the weapon will end up in a queue. Once the weapon they are currently using runs out of ammo, the next weapon last added to the queue will be equipped. The player will continue to use the looted weapons until there are none in the queue.</p>
+
+<p>The gun that kills the enemy will be equipped in the same hand. Different hands can have different guns. In terms of the queue, there will be two queues for each hand.</p>
+
+<h3 id="smg">SMG</h3>
 <ul>
-  <li>Pistol</li>
-  <li>SMG</li>
-  <li>Assault Rifle</li>
-  <li>Shotgun</li>
-  <li>Heavy Machine Shotgun</li>
-  <li>Sniper Rifle</li>
+  <li>Random Bullets - Shoots random coloured Bullets</li>
+  <li>Has 2 Magazines meaning it can be shot twice</li>
+  <li>Shoots a burst of X bullets per trigger pull</li>
+</ul>
+
+<h3 id="assault-rifle">Assault Rifle</h3>
+<ul>
+  <li>Shoots bullets that kill a single enemy regardless of colour</li>
+  <li>Can be shot 3 times</li>
+  <li>Shoots a burst of X bullets per trigger pull</li>
+</ul>
+
+<h3 id="shotgun">Shotgun</h3>
+<ul>
+  <li>Shoots bullets that kill a single enemy regardless of colour</li>
+  <li>Kills all VISIBLE enemies down a lane</li>
+  <li>Pushes back all enemies</li>
+  <li>The closer the shot enemy was to the player, the further all enemies are pushed back</li>
+  <li>Can be shot twice</li>
+</ul>
+
+<h3 id="heavy-machine-gun">Heavy Machine Gun</h3>
+<ul>
+  <li>Shoots bullets that kill a single enemy regardless of colour</li>
+  <li>Can be shot 2 times</li>
+  <li>Shoots a burst of X bullets per trigger pull</li>
+  <li>Shoots down 3 lanes - The lanes adjacent to where the player aims.</li>
+</ul>
+
+<h3 id="sniper-rifle">Sniper Rifle</h3>
+<ul>
+  <li>Zooms out to see all enemies that have spawned.</li>
+  <li>Shoots Armor Piercing Bullets</li>
+  <li>Can shoot 3 times</li>
 </ul>
 
 <hr />
@@ -81,7 +146,7 @@
 
 <h2 id="enemies">Enemies</h2>
 
-<p>Enemies will be the main threat to the player as they approach from all directions. There are different enemy types that will require different ways to kill them.</p>
+<p>Enemies will be the main threat to the player as they approach from all directions. There are different enemy types that will require different ways to kill them. Enemies only require one shot to be killed provided that they are killed correctly. Enemies all move at the same pace.</p>
 
 <h3 id="enemy-types">Enemy Types</h3>
 
@@ -94,7 +159,19 @@
 
 <h4 id="grey">Grey</h4>
 
-<p>The grey is the most common enemy the player will encounter. Grey enemies can be killed with any bullet</p>
+<p>The grey is the most common enemy the player will encounter. Grey enemies can be killed with any bullet.</p>
+
+<h4 id="redblue">Red/Blue</h4>
+
+<p>Red and Blue enemies are a level above grey enemies in that they require one shot to kill but also require the correct gun to kill them. Red enemies with the red gun, blue enemies with the blue gun. <em>Purple Bullets</em> still follow the same rule as previously stated where purple bullets shot from a red gun count as red bullets and purple bullets shot from the blue gun count as blue bullets.</p>
+
+<h4 id="purple">Purple</h4>
+
+<p>Purple enemies can only be killed with purple bullets shot when both guns are pointed down the same lane. This is to force the player to sync both joysticks in the same direction which will require a little more coordination.</p>
+
+<h4 id="yellowgreen">Yellow/Green</h4>
+
+<p>Yellow and green enemies can be killed with any bullet (Red, Blue, Purple), however, once killed they rotate their <em>Spawn Instance</em>, either clockwise when a green enemy is killed or anti-clockwise when a yellow enemy is killed. the rotation of the <em>Spawn Instance</em> should happen almost instantly - synced with <em>Hit Stop</em> time. If there are no enemies left on the same <em>Spawn Instance</em> as these types of enemies, then there will be no rotation.</p>
 
 <h3 id="spawning">Spawning</h3>
 
