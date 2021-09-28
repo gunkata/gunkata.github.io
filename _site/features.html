@@ -38,7 +38,7 @@
 
 <h3 id="bullet-time">Bullet Time</h3>
 
-<p>Bullet Time is similar to <em>Hit Stop</em> but occurs randomly and slows down the enemies rather than fully stop their movement. This will be another tool that is activated by killing an enemy. The speed will be fixed meaning that regardless of the <em>Global Game Speed</em> the Bullet Time will set the Global Game Speed to a set value rather than reduce it by a set amount. Bullet Time lasts longer than Hit Stop but should not overlap in time, meaning you cannot activate another Bullet Time whilst it’s already active.</p>
+<p>Bullet Time is similar to <em>Hit Stop</em> but occurs randomly and slows down the enemies rather than fully stop their movement. When Bullet Time activates, the effect can be extended by killing more enemies before the time runs out. Each kill will reset the time, but will increase the rate at which the Bullet Time depletes. A bar will represent the time you have in Bullet Time and should deplete overtime. Bullet time will continue until the bar is empty. Afterwards, the enemies should immediately start moving as before.</p>
 
 <h3 id="camera">Camera</h3>
 
@@ -86,45 +86,47 @@
 
 <h2 id="armoury">Armoury</h2>
 
-<p>Weapons will spawn on enemies which will display an icon above their head. Once an enemy is killed the player will  wield the gun(s) until all ammo is used from that gun. If the player happens to kill multiple enemies whilst wielding another weapon other than his pistols the weapon will end up in a queue. Once the weapon they are currently using runs out of ammo, the next weapon last added to the queue will be equipped. The player will continue to use the looted weapons until there are none in the queue.</p>
+<p>Special guns will appear in the game that help the player kill enemies easier. These guns are limited in use and will have special effects and properties to them that differ from your default pistol. Most of these guns will shoot special ammo that can kill any type of enemy so the player will not have to worry which gun they use.</p>
 
-<p>The gun that kills the enemy will be equipped in the same hand. Different hands can have different guns. In terms of the queue, there will be two queues for each hand.</p>
+<h3 id="how-to-acquire">How to acquire</h3>
 
-<h3 id="smg">SMG</h3>
+<p>Guns will randomly spawn on enemies which will display as an icon above their head. When the player kills that enemy, they will wield the gun in the hand/side that was used to kill that enemy. This means that they will be able to wield two different guns at the same time. If the player with the gun equipped kills another enemy that has a different gun type, the player will equip the gun that the enemy has and throw away their current gun. Similarly, if the player kills an enemy with a gun of the same type as the one on an enemy, the amount of shots left on the gun is “reloaded” (<em>The player throws away the gun to use the newly acquired one</em>).</p>
+
+<h3 id="guns">Guns</h3>
+
+<h4 id="smg">SMG</h4>
 <ul>
-  <li>Random Bullets - Shoots random coloured Bullets</li>
-  <li>Has 2 Magazines meaning it can be shot twice</li>
+  <li>Shoots bullets in randomly a cone pattern.</li>
   <li>Shoots a burst of X bullets per trigger pull</li>
+  <li>Can be shot Y times before the character throws the gun away.</li>
 </ul>
 
-<h3 id="assault-rifle">Assault Rifle</h3>
+<h4 id="assault-rifle">Assault Rifle</h4>
 <ul>
-  <li>Shoots bullets that kill a single enemy regardless of colour</li>
-  <li>Can be shot 3 times</li>
+  <li>Shoots in a tighter cone than an SMG pattern to reach enemies further in the lane.</li>
   <li>Shoots a burst of X bullets per trigger pull</li>
+  <li>Can be shot Y times before the character throws the gun away.</li>
 </ul>
 
-<h3 id="shotgun">Shotgun</h3>
+<h4 id="shotgun">Shotgun</h4>
 <ul>
-  <li>Shoots bullets that kill a single enemy regardless of colour</li>
-  <li>Kills all VISIBLE enemies down a lane</li>
-  <li>Pushes back all enemies</li>
+  <li>Shoots bullets that kills all enemies within a certain distance from the player.</li>
+  <li>Pushes all the lanes back similarly to the <strong><em>Knockback</em></strong> feature.</li>
   <li>The closer the shot enemy was to the player, the further all enemies are pushed back</li>
   <li>Can be shot twice</li>
 </ul>
 
-<h3 id="heavy-machine-gun">Heavy Machine Gun</h3>
+<h4 id="heavy-machine-gun">Heavy Machine Gun</h4>
 <ul>
-  <li>Shoots bullets that kill a single enemy regardless of colour</li>
-  <li>Can be shot 2 times</li>
-  <li>Shoots a burst of X bullets per trigger pull</li>
-  <li>Shoots down 3 lanes - The lanes adjacent to where the player aims.</li>
+  <li>Shoots bullets randomly in a wide cone. As the trigger is held down the cone widens and slowly returns to the original size cone.</li>
+  <li>Has a clip of 60 bullets.</li>
+  <li>The gun can be used as many times until all bullets in the clip are used.</li>
 </ul>
 
-<h3 id="sniper-rifle">Sniper Rifle</h3>
+<h4 id="sniper-rifle">Sniper Rifle</h4>
 <ul>
   <li>Zooms out to see all enemies that have spawned.</li>
-  <li>Shoots Armor Piercing Bullets</li>
+  <li>Kills all enemies within the lane</li>
   <li>Can shoot 3 times</li>
 </ul>
 
@@ -132,15 +134,25 @@
 
 <h2 id="skills">Skills</h2>
 
-<ul>
-  <li>Screen Wipe</li>
-  <li>
-    <Colour> Change
-</Colour>
-  </li>
-  <li>Armour Piercing bullet</li>
-  <li>Adrenaline Rush</li>
-</ul>
+<p>Skills will be another tool at the player’s disposal that activate after the player reaches the certain number of kills. The number of kills for each skill is determined by selecting a number within a range set E.g. <em>Black out</em> will require kills between 80 - 200. A skill will activate once the number of kills has been met and will reset the number of kills required to be activated again.</p>
+
+<h3 id="skills">Skills</h3>
+
+<h4 id="screen-wipe">Screen Wipe</h4>
+
+<p>When this skill activates, all enemies on the screen will be killed. This skill may have different effects to show how the enemies have died, but this skill’s intentions should be a reset for the player. This will not kill enemies offscreen unless their <em>Spawn Instance</em> appears on the screen. Enemies may appear offscreen due to wide screen resolutions. Although their <em>Spawn Instance</em> appears first on the left and right of their character, the top and bottom enemies will be offscreen if there are any. Enemies will stop moving until the skill taken effect to which the enemies will gradually return to the normal speed.</p>
+
+<h4 id="black-out">Black Out</h4>
+
+<p>This skill will turn all enemies grey for 10 seconds. Newly spawned enemies will be grey until the timer is up. Once the timer is up enemies spawning will continue as before.</p>
+
+<h4 id="armour-piercing-bullet">Armour Piercing bullet</h4>
+
+<p>Regardless of which gun, this skill will make the next bullet shot from either gun similar to a Sniper Rifle’s bullet. The player will only get one bullet to use between both guns and the bullet will kill all enemies within the lane. The difference between this and a Sniper Rifle should be that the screen will not zoom out and the player only has one shot.</p>
+
+<h4 id="adrenaline-rush">Adrenaline Rush</h4>
+
+<p>When this skill activates the movement of all enemies will slow down for 10 seconds. Hit Stop and Bullet Time can still take effect when this skill is active and will last longer. The skill simply slows down the movement of the enemies. The player and other elements should still move at the same speed.</p>
 
 <hr />
 
@@ -149,13 +161,6 @@
 <p>Enemies will be the main threat to the player as they approach from all directions. There are different enemy types that will require different ways to kill them. Enemies only require one shot to be killed provided that they are killed correctly. Enemies all move at the same pace.</p>
 
 <h3 id="enemy-types">Enemy Types</h3>
-
-<ul>
-  <li>Grey</li>
-  <li>Red/Blue</li>
-  <li>Purple</li>
-  <li>Yellow/Green</li>
-</ul>
 
 <h4 id="grey">Grey</h4>
 

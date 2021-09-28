@@ -23,7 +23,7 @@ When a bullet kills an enemy, all enemies will stop moving for a brief moment. H
 
 ### Bullet Time
 
-Bullet Time is similar to _Hit Stop_ but occurs randomly and slows down the enemies rather than fully stop their movement. This will be another tool that is activated by killing an enemy. The speed will be fixed meaning that regardless of the _Global Game Speed_ the Bullet Time will set the Global Game Speed to a set value rather than reduce it by a set amount. Bullet Time lasts longer than Hit Stop but should not overlap in time, meaning you cannot activate another Bullet Time whilst it's already active.
+Bullet Time is similar to _Hit Stop_ but occurs randomly and slows down the enemies rather than fully stop their movement. When Bullet Time activates, the effect can be extended by killing more enemies before the time runs out. Each kill will reset the time, but will increase the rate at which the Bullet Time depletes. A bar will represent the time you have in Bullet Time and should deplete overtime. Bullet time will continue until the bar is empty. Afterwards, the enemies should immediately start moving as before.
 
 ### Camera
 

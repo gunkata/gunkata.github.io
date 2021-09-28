@@ -7,11 +7,6 @@ Enemies will be the main threat to the player as they approach from all directio
 
 ### Enemy Types
 
-- Grey
-- Red/Blue
-- Purple
-- Yellow/Green
-
 #### Grey
 
 The grey is the most common enemy the player will encounter. Grey enemies can be killed with any bullet.
